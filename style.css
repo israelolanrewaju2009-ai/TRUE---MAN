@@ -1,0 +1,345 @@
+/* RESET & BASE STYLES */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7e096; /* Full-width gold background */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .nav-links a {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* KEYFRAME ANIMATIONS */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TOP LOGO BANNER */
+.top-logo-bar {
+  text-align: center;
+  padding: 20px 15px 10px;
+  animation: fadeInDown 0.8s ease-out;
+}
+.top-logo-bar h2 {
+  font-size: 26px;
+  color: #111;
+  letter-spacing: 3px;
+}
+.top-logo-bar span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: #555;
+}
+
+/* NAVIGATION */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  max-width: 1100px;
+  margin: 0 auto; /* Keeps navigation centered without shrinking background */
+}
+.brand-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #111;
+  transition: width 0.3s ease-in-out;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('/Gemini_Generated_Image_us6051us6051us60.jpg') center/cover no-repeat;
+  height: 75vh;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 25px;
+}
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease-out;
+}
+.hero p {
+  font-size: 15px;
+  max-width: 600px;
+  margin-bottom: 25px;
+  color: #ddd;
+  animation: fadeInUp 1.2s ease-out;
+}
+.btn {
+  display: inline-block;
+  background-color: #f7e096;
+  color: #111;
+  padding: 12px 30px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1.4s ease-out;
+}
+.btn:hover {
+  background-color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* TORE-PAPER DIVIDERS */
+.paper-divider-top {
+  height: 40px;
+  background-color: #fff;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 75% 80%, 50% 20%, 25% 70%, 0 10%);
+  margin-top: -39px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ABOUT & SERVICES SECTION */
+.about-services {
+  background-color: #fff;
+  padding: 80px 25px;
+  text-align: center;
+}
+.about-services h2 {
+  font-size: 32px;
+  color: #d4af37;
+  margin-bottom: 15px;
+}
+.about-services .subtitle {
+  max-width: 600px;
+  margin: 0 auto 50px;
+  font-size: 13px;
+  color: #666;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto; /* Centers the card grid */
+}
+.service-card {
+  background: #fafafa;
+  padding: 30px 20px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: all 0.3s ease-in-out;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  background: #fff;
+}
+.service-card .icon {
+  font-size: 30px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.service-card:hover .icon {
+  transform: scale(1.2) rotate(5deg);
+}
+.service-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #222;
+}
+.service-card p {
+  font-size: 12px;
+  color: #777;
+}
+
+/* PRICING SECTION */
+.pricing-section {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+              url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 80px 25px;
+  text-align: center;
+}
+.pricing-section h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+.pricing-section .subtext {
+  font-size: 13px;
+  color: #aaa;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto; /* Centers pricing lists */
+  text-align: left;
+}
+.price-item {
+  margin-bottom: 25px;
+  padding: 5px;
+  transition: background 0.3s ease;
+}
+.price-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.price-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #555;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.price-header h4 {
+  font-size: 16px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.price-item:hover .price-header h4 {
+  color: #f7e096;
+}
+.price-header .price {
+  color: #f7e096;
+  font-weight: 700;
+}
+.price-item p {
+  font-size: 12px;
+  color: #888;
+}
+
+/* TESTIMONIALS SECTION */
+.testimonials {
+  background-color: #fff;
+  padding: 80px 25px;
+  text-align: center;
+}
+.testimonials h2 {
+  font-size: 28px;
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+.testimonial-card {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.testimonial-card blockquote {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+.testimonial-card:hover blockquote {
+  color: #d4af37;
+}
+.testimonial-card .author {
+  font-size: 12px;
+  color: #888;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  background-color: #f7e096;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #222;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}

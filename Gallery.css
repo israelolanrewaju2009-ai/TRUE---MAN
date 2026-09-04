@@ -1,0 +1,386 @@
+/* ==========================================================================
+   MODERN GALLERY PAGE STYLES - GENT'S ARCHIVE
+   Focus: Identical structure, responsiveness, and interaction patterns 
+   (the spotlight hover) to the Services/About pages.
+   Theme: Gold Background / Black Text.
+   ========================================================================== */
+
+/* 1. Core Variables & Setup - SHARED THEME */
+:root {
+  /* Color Palette - Updated to user preference: Gold & Black Text */
+  --color-main-bg: #bf9b30;       /* Rich Satin Gold */
+  --color-card-bg: #e6cf8a;       /* Lighter Gold */
+  
+  --color-text-main: #000000;     /* True Black for max contrast */
+  --color-text-muted: #333333;    /* Dark Gray for subtle text */
+  --color-text-on-black: #e6e6e6; /* Light gray text on dark elements */
+
+  --color-accent: #000000;        /* Accent Color is Black */
+  
+  --color-border: rgba(0, 0, 0, 0.12); /* Subtle Black transparency */
+
+  /* Gradients */
+  --grad-main: linear-gradient(135deg, #a67c00 0%, #bf9b30 50%, #e6cf8a 100%);
+  --grad-card-hover: linear-gradient(135deg, rgba(166, 124, 0, 0.1) 0%, rgba(191, 155, 48, 0.2) 100%);
+
+  /* Typography */
+  --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Cinzel', serif;
+
+  /* Layout & Spacing */
+  --container-width: 1280px;
+  --header-height: 90px;
+  --section-padding: 120px;
+  --border-radius: 8px;
+
+  /* Shadows */
+  --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.15); /* Modern deep shadow */
+}
+
+/* 2. Reset & Core Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-main-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* Text alignment utilities */
+.text-center { text-align: center; }
+
+/* 3. Header & Navigation (Identical to previous pages) */
+.main-header {
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  background: rgba(191, 155, 48, 0.95); /* Main Gold background with subtle alpha */
+}
+
+.main-header.scrolled {
+  background: rgba(0, 0, 0, 0.9); /* Dark background when scrolled */
+  height: 70px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header .logo a {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-text-main);
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.main-header.scrolled .logo a {
+  color: #bf9b30; /* Switch logo color to gold when scrolled dark */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-main);
+  text-decoration: none;
+  letter-spacing: 1.8px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+.main-header.scrolled .nav-links a {
+  color: var(--color-text-on-black) !important; /* Text light when header dark */
+}
+
+/* Navigation active line effect */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-text-main);
+  transition: width 0.3s ease;
+}
+
+.main-header.scrolled .nav-links a::after {
+  background-color: #bf9b30; /* Active line gold when header dark */
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.cta-nav {
+  background: var(--color-accent);
+  color: #fff !important; /* Button text always white against black background */
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: 1px solid var(--color-accent);
+  transition: all 0.3s ease !important;
+}
+
+.main-header.scrolled .cta-nav {
+  background: transparent;
+  color: #bf9b30;
+  border-color: #bf9b30;
+}
+
+/* 4. Gallery Hero Section (Structure matches previous pages) */
+.gallery-hero {
+  padding-top: calc(var(--header-height) + 60px);
+  padding-bottom: 60px;
+  background: radial-gradient(circle at 50% 30%, #e6cf8a 0%, var(--color-main-bg) 100%);
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--color-text-main);
+  line-height: 1.15;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-size: clamp(14px, 1.5vw, 17px);
+  color: var(--color-text-muted);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+/* 5. Gallery Grid Section (Structure matches the overall layout grid) */
+.gallery-grid-section {
+  padding: 80px 0 var(--section-padding) 0;
+  background-color: var(--color-main-bg);
+}
+
+.gallery-grid {
+  display: grid;
+  /* Dynamic Grid: Auto-fits based on min card width (Same as standard layout) */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* 6. Gallery Card Component (Matches visual structure of previous pages) */
+.gallery-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  /* padding removed to make image flush */
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-subtle);
+  overflow: hidden;
+}
+
+/* Spotlight Effect on Hover (SHARED INTERACTION PATTERN) */
+.gallery-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--grad-card-hover);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2; /* Sits above image and content */
+}
+
+.gallery-card:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.gallery-card:hover::after {
+  opacity: 1;
+}
+
+/* Featured Card Accent */
+.gallery-card.feature {
+  border: 2px solid var(--color-accent); /* Black border for feature */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Container (Unique to Gallery) */
+.gallery-image-wrapper {
+  width: 100%;
+  height: 260px; /* Fixed height for image area on desktop */
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers area without distortion */
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.08); /* Modern subtle zoom on hover */
+}
+
+/* Content Container (Matches padding pattern) */
+.gallery-content {
+  padding: 30px 24px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes content down */
+  position: relative;
+  z-index: 1; /* Below the hover highlight */
+}
+
+.gallery-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  color: var(--color-text-main);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.gallery-description {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: auto; /* Required for layout continuity */
+}
+
+/* Badge Component (Standardized) */
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--color-accent);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 50px;
+  z-index: 3; /* Above the hover effect */
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (IDENTICAL RESPONSIVE MECHANICS)
+   ========================================================================== */
+
+/* Large Screens (Above container width) */
+@media screen and (min-width: 1400px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr); /* Lock to 3 columns for consistency */
+  }
+}
+
+/* Tablets (Under 1024px) */
+@media screen and (max-width: 1024px) {
+  :root {
+    --header-height: 80px;
+    --section-padding: 100px;
+  }
+  
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 10px; }
+}
+
+/* Mobile Devices (Under 768px) */
+@media screen and (max-width: 768px) {
+  /* Handle mobile header nav */
+  .nav-links {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    padding: 30px 24px;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(-150%); /* Menu hidden on mobile */
+    transition: transform 0.4s ease;
+    z-index: 999;
+  }
+
+  .nav-links a { color: var(--color-text-on-black) !important; }
+  .main-header.scrolled .nav-links { top: 70px; }
+
+  /* Mobile Grid (1 column) */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .gallery-hero { padding-bottom: 40px; }
+  .gallery-grid-section { padding-top: 40px; }
+  
+  /* Reduce image height slightly on mobile for better flow */
+  .gallery-image-wrapper { height: 220px; }
+}
+
+/* Small Mobile Screens (Under 480px) */
+@media screen and (max-width: 480px) {
+  :root {
+    --section-padding: 80px;
+  }
+  
+  .hero-title { font-size: 2.1rem; }
+  .gallery-title { font-size: 17px; }
+  
+  .gallery-content { padding: 24px 20px; }
+}

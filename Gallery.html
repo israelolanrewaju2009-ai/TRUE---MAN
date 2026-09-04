@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gallery | The Gent's Archive</title>
+    <!-- Modern Typography: Cinzel and Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="Gallery.css">
+</head>
+<body>
+
+    <!-- Minimalist Floating Header/Nav (Standardized Across Pages) -->
+    <header class="main-header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">The GENT'S Archive</a>
+            </div>
+            <ul class="nav-links">
+                 <li><a href="index.html">HOME</a></li>
+             <li><a href="About.html">ABOUT US</a></li>
+             <li><a href="service.html">SERVICES</a></li>
+             <li><a href="/Gallery.html">GALLERY</a></li>
+             <li><a href="#blog">BLOG</a></li>
+             <li><a href="#pricing">PRICING</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section (Matches structure of previous pages) -->
+        <section class="gallery-hero">
+            <div class="container text-center">
+                <h1 class="hero-title">The Cut Portfolio</h1>
+                <p class="hero-subtitle">A curated exhibition of our master craftsmanship. Explore bespoke styles, precision finishes, and timeless cuts executed by The Archive’s elite specialists.</p>
+            </div>
+        </section>
+
+        <!-- Gallery Grid Section (Matches the overall layout grid) -->
+        <section class="gallery-grid-section">
+            <div class="container">
+                <div class="gallery-grid">
+                    
+                    <!-- Gallery Item 1 -->
+                    <article class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <!-- Placeholder image: replace src with your actual cut image -->
+                            <img src="/Faded haircut_IG= @kuberqof.jpg" alt="Classic Pompadour Haircut" class="gallery-img">
+                        </div>
+                        <div class="gallery-content">
+                            <h2 class="gallery-title">The Modern Pompadour</h2>
+                            <p class="gallery-description">High volume top with a sharp, medium fade. Classic sophistication meets modern edge.</p>
+                        </div>
+                        <span class="badge">SIGNATURE</span>
+                    </article>
+
+                    <!-- Gallery Item 2 -->
+                    <article class="gallery-card feature">
+                        <div class="gallery-image-wrapper">
+                            <img src="Modern Haircuts for Corporate Men Style.jpg" alt="Executive Contour Haircut" class="gallery-img">
+                        </div>
+                        <div class="gallery-content">
+                            <h2 class="gallery-title">The Executive Contour</h2>
+                            <p class="gallery-description">Precision low fade with a immaculate hard part. The standard for corporate refinement.</p>
+                        </div>
+                        <span class="badge">VISION</span>
+                    </article>
+
+                    <!-- Gallery Item 3 -->
+                    <article class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <img src="/download (6).jpg" alt="Textured Quiff Haircut" class="gallery-img">
+                        </div>
+                        <div class="gallery-content">
+                            <h2 class="gallery-title">Textured Crop & Quiff</h2>
+                            <p class="gallery-description">Dynamic texture through the top with a high skin fade. Effortless style for the creative gentleman.</p>
+                        </div>
+                    </article>
+
+                     <!-- Gallery Item 4 -->
+                    <article class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <img src="Summer Trend Buzz Cut Fades.jpg" alt="Buzz Cut and Beard Shape" class="gallery-img">
+                        </div>
+                        <div class="gallery-content">
+                            <h2 class="gallery-title">The Unified Buzz</h2>
+                            <p class="gallery-description">Uniform buzz cut with detailed beard contouring and lining. Low maintenance, high impact.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Essential JavaScript for Header Interactions -->
+    <script>
+        // Handle sticky header scroll effect
+        const header = document.querySelector('.main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

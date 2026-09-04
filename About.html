@@ -1,0 +1,106 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About The Archive | The Gent's Archive</title>
+    <!-- Modern Typography: Cinzel and Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="About.css">
+</head>
+<body>
+
+    <!-- Minimalist Floating Header/Nav (Matches standard design) -->
+    <header class="main-header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">The GENT'S Archive</a>
+            </div>
+            <ul class="nav-links">
+             <li><a href="index.html">HOME</a></li>
+             <li><a href="About.html">ABOUT US</a></li>
+             <li><a href="service.html">SERVICES</a></li>
+             <li><a href="Gallery.html">GALLERY</a></li>
+             <li><a href="#blog">BLOG</a></li>
+             <li><a href="#pricing">PRICING</a></li>    
+             </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section (Matches structure of Services hero) -->
+        <section class="about-hero">
+            <div class="container text-center">
+                <h1 class="hero-title">Where Tradition Meets Legacy</h1>
+                <p class="hero-subtitle">The Gent’s Archive is not just a destination for refinement; it is the culmination of timeless craftsmanship and bespoke luxury, dedicated to the modern connoisseur.</p>
+            </div>
+        </section>
+
+        <!-- Pillars Section (Matches the Services Grid structure) -->
+        <section class="about-grid-section">
+            <div class="container">
+                <div class="about-grid">
+                    
+                    <!-- About Card 1: Our Philosophy -->
+                    <article class="about-card">
+                        <div class="about-icon-wrapper">
+                            <!-- Minimalist SVG Icon: Crown/Legacy -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="about-icon"><path d="M12 2L19 7V17L12 22L5 17V7L12 2Z"></path><polyline points="12 22 12 12 19 7"></polyline><polyline points="12 12 5 7"></polyline></svg>
+                        </div>
+                        <h2 class="about-title">The Foundation</h2>
+                        <p class="about-description">Rooted in the fundamental belief that excellence is not static, our philosophy blends ancestral techniques with contemporary innovation. We honor the heritage of our craft, ensuring every stitch, cut, and finish contributes to a legacy of unparalleled quality.</p>
+                        <div class="about-footer">
+                            <span class="about-meta">Established 2021</span>
+                        </div>
+                    </article>
+
+                    <!-- About Card 2: Our Craft (Featured/Signature Style) -->
+                    <article class="about-card feature">
+                        <div class="about-icon-wrapper">
+                            <!-- Minimalist SVG Icon: Tools -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="about-icon"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a2 2 0 0 1 2.83 0l1.4 1.4a2 2 0 0 1 0 2.83L19.4 13.7a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a2 2 0 0 1 2.83 0l1.4 1.4a2 2 0 0 1 0 2.83L19.4 21.1a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a2 2 0 0 1 2.83 0l1.4 1.4a2 2 0 0 1 0 2.83L19.4 21.1Z"></path><path d="m3 21 6-6"></path><path d="m15 9-6 6"></path></svg>
+                        </div>
+                        <h2 class="about-title">The Archive Standard</h2>
+                        <p class="about-description">We set the gold standard for bespoke services. Every appointment is a study in precision. We obsess over the micro-details that others ignore, transforming grooming and attire into forms of curated art. If it is not exceptional, it is not The Archive.</p>
+                        <div class="about-footer">
+                            <span class="about-meta">Zero Compromise</span>
+                        </div>
+                        <span class="badge">VISION</span>
+                    </article>
+
+                    <!-- About Card 3: Community/Membership -->
+                    <article class="about-card">
+                        <div class="about-icon-wrapper">
+                            <!-- Minimalist SVG Icon: Members -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="about-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h2 class="about-title">The Community</h2>
+                        <p class="about-description">More than a service, we are a curated collective. The Archive brings together gentlemen who share a commitment to sophisticated living and mutual ambition. Your membership grants exclusive access to collaborative events, workshops, and a prestigious network of like-minded peers.</p>
+                        <div class="about-footer">
+                            <span class="about-meta">Membership Access</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Essential JavaScript for Header Interactions -->
+    <script>
+        // Handle sticky header scroll effect
+        const header = document.querySelector('.main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
