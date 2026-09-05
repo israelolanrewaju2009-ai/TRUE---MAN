@@ -78,9 +78,8 @@ body {
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
-  background-image:  url('/'); /* Main Gold background with subtle alpha */
+  background : rgba(191, 155, 48, 0.95); /* Main Gold background with subtle alpha */
 }
-
 .main-header.scrolled {
   background: rgba(0, 0, 0, 0.9); /* Dark background when scrolled */
   height: 70px;
