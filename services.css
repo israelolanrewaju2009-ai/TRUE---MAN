@@ -383,181 +383,96 @@ body {
   border-radius: 50px;
 }
 
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (FULL RESPONSIVENESS)
-   ========================================================================== */
-
-/* Large Screens (Above container width) */
-@media screen and (min-width: 1400px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr); /* Lock to 3 columns for consistency */
-  }
+ /* HEADER BASE CONTAINER */
+.header {
+  width: 100%;
+  background-color: #c89d36; /* Matching gold background */
+  position: relative;
+  z-index: 1000;
 }
 
-/* Tablets (Under 1024px) */
-@media screen and (max-width: 1024px) {
-  :root {
-    --header-height: 80px;
-    --section-padding: 100px;
-  }
-  
-  .nav-links { gap: 20px; }
-  .nav-links a { font-size: 10px; }
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Mobile Devices (Under 768px) */
-@media screen and (max-width: 768px) {
-  /* Handle mobile header nav */
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  color: #111;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* HIDE CHECKBOX */
+.nav-toggle {
+  display: none;
+}
+
+/* HAMBURGER ICON (MOBILE) */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #111;
+  border-radius: 2px;
+}
+
+/* MOBILE DROPDOWN MENU */
+.nav-links {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #c89d36;
+  padding: 15px 0;
+  text-align: center;
+  gap: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-links a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* TOGGLE DROPDOWN WHEN CHECKED */
+.nav-toggle:checked ~ .nav-links {
+  display: flex;
+}
+
+/* DESKTOP VIEW (769px and wider) */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; /* Hide hamburger icon on desktop */
+  }
+
   .nav-links {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
-    padding: 30px 24px;
-    gap: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    transform: translateY(-150%); /* Menu hidden on mobile */
-    transition: transform 0.4s ease;
-    z-index: 999;
+    display: flex;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 20px;
   }
-
-  .nav-links a { color: var(--color-text-on-black) !important; }
-  .main-header.scrolled .nav-links { top: 70px; }
-
-  /* Mobile Grid (1 column) */
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  
-  .services-hero { padding-bottom: 40px; }
-  .services-grid-section { padding-top: 40px; }
-  
-  .service-card { padding: 40px 24px 32px 24px; }
 }
-
-/* /* Small Mobile Screens (Under 480px)```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Services | The Gent's Archive</title>
-    <!-- Modern Typography: Cinzel and Montserrat -->
-    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;600&display=swap](https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;600&display=swap)" rel="stylesheet">
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="services.css">
-</head>
-<body>
-
-    <!-- Minimalist Floating Header/Nav (Matches your previous requests) -->
-    <header class="main-header">
-        <nav class="container">
-            <div class="logo">
-                <a href="index.html">The GENT'S Archive</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">About Us</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="booking.html" class="cta-nav">Book Now</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Content Area -->
-    <main>
-        <!-- Hero Section -->
-        <section class="services-hero">
-            <div class="container text-center">
-                <h1 class="hero-title">Our Master Craftsmanship</h1>
-                <p class="hero-subtitle">Bespoke services for the modern gentleman, rooted in timeless tradition and executed with modern precision.</p>
-            </div>
-        </section>
-
-        <!-- Services Grid Section -->
-        <section class="services-grid-section">
-            <div class="container">
-                <div class="services-grid">
-                    
-                    <!-- Service Card 1: Haircut -->
-                    <article class="service-card">
-                        <div class="service-icon-wrapper">
-                            <!-- Minimalist SVG Icon: Scissors -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="service-icon"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>
-                        </div>
-                        <h2 class="service-title">The Archive Haircut</h2>
-                        <p class="service-description">Tailored consulting, refreshing wash, precision haircut, and final style. Includes a brief scalp and neck massage.</p>
-                        <ul class="service-features">
-                            <li>Custom Consultation</li>
-                            <li>Style & Finishing</li>
-                            <li>Refinement Touch-up</li>
-                        </ul>
-                        <div class="service-footer">
-                            <span class="service-price">$45.00</span>
-                            <a href="booking.html" class="btn btn-primary">Book Now</a>
-                        </div>
-                    </article>
-
-                    <!-- Service Card 2: Royal Shave -->
-                    <article class="service-card feature">
-                        <div class="service-icon-wrapper">
-                            <!-- Minimalist SVG Icon: Razor -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="service-icon"><path d="M19 19L5 5"></path><path d="M3.7 13a2.9 2.9 0 0 1 0-4.1l4.1-4.1a2.9 2.9 0 0 1 4.1 0l3.8 3.8"></path><path d="M11 11a3.9 3.9 0 0 0 0 5.6l3.4 3.4a3.9 3.9 0 0 0 5.6 0l1-1"></path></svg>
-                        </div>
-                        <h2 class="service-title">The Royal Shave</h2>
-                        <p class="service-description">Our signature ultimate grooming. Five-step hot towel preparation, straight razor shave, cold towel close, and face massage.</p>
-                        <ul class="service-features">
-                            <li>Pre-Shave Oil Treatment</li>
-                            <li>Aromatic Hot Towels</li>
-                            <li>Straight Razor Precision</li>
-                        </ul>
-                        <div class="service-footer">
-                            <span class="service-price">$65.00</span>
-                            <a href="booking.html" class="btn btn-primary">Book Now</a>
-                        </div>
-                        <span class="badge">SIGNATURE</span>
-                    </article>
-
-                    <!-- Service Card 3: Beard Trim -->
-                    <article class="service-card">
-                        <div class="service-icon-wrapper">
-                            <!-- Minimalist SVG Icon: Clippers -->
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="service-icon"><rect x="3" y="10" width="18" height="6" rx="2"></rect><path d="M8 10V8a4 4 0 0 1 8 0v2"></path><path d="M12 22a8 8 0 0 0 8-8H4a8 8 0 0 0 8 8Z"></path></svg>
-                        </div>
-                        <h2 class="service-title">Beard Trim & Shape</h2>
-                        <p class="service-description">Detail-oriented lining, contouring, and substantial volume reduction using clippers and shears. Finished with hydration oil.</p>
-                        <ul class="service-features">
-                            <li>Sculpting & Definition</li>
-                            <li>Neckline Refinement</li>
-                            <li>Moisturizing Treatment</li>
-                        </ul>
-                        <div class="service-footer">
-                            <span class="service-price">$35.00</span>
-                            <a href="booking.html" class="btn btn-primary">Book Now</a>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Essential JavaScript for Header Interactions -->
-    <script>
-        // Handle sticky header scroll effect
-        const header = document.querySelector('.main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
-</body>
-</html> */
