@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Portal | The Gentlemen's Cut</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts for sleek typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+
+  <div class="background-overlay"></div>
+
+  <div class="login-container">
+    <div class="brand-header">
+      <div class="logo-icon">&#9986;</div> <!-- Barber Scissors Icon -->
+      <h1>THE GENTLEMEN'S CUT</h1>
+      <p class="subtitle">BARBER & GROOMING STUDIO</p>
+    </div>
+
+    <form id="loginForm" class="login-form">
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="client@example.com" required>
+      </div>
+
+      <div class="input-group">
+        <div class="label-row">
+          <label for="password">Password</label>
+          <a href="#" class="forgot-link">Forgot?</a>
+        </div>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="submit-btn">SIGN IN</button>
+    </form>
+
+    <div class="card-footer">
+      <p>New client? <a href="#">Book an Appointment</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
